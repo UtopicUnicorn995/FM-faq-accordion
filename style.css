@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;700&display=swap');
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Work Sans', sans-serif;
+}
+
+body{
+    background-image: url(./assets/images/background-pattern-mobile.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: #F8EEFF;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    padding:  0 24px;
+}
+
+main{
+    width: 100%;
+    background-color: #fff;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 24px;
+    padding: 24px;
+    box-shadow: 0px 32px 56px 0px rgba(80, 0, 118, 0.10);
+}
+
+h1{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    column-gap: 24px;
+    font-size: 32px;
+}
+
+h1 img{
+    height: 24px;
+    width: 24px;
+}
+
+ul{
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+}
+
+li{
+    display: flex;
+    flex-direction: column;
+    transition: 0.3s ease;
+}
+
+li .faq-subtitle{
+    display: flex;
+    align-items: center;
+    align-self: stretch;
+    justify-content: space-between;
+    column-gap: 24px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #301534;
+    
+}
+
+li .faq-response{
+    font-size: 14px;
+    font-weight: 400;
+    color: #8B6990;
+    line-height: 21px;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.3s ease;
+}
+
+li .faq-subtitle span{
+    max-width: 225px;
+}
+
+li .faq-subtitle .icon{
+    content: url(./assets/images/icon-plus.svg);
+    height: 30px;
+    width: 30px;
+    flex-shrink: 0;
+}
+
+li.active .faq-subtitle .icon{
+    content: url(./assets/images/icon-minus.svg);
+}
+
+li.line{
+    width: 100%;
+    height: 1px;
+    background-color: #F8EEFF;
+}
+
+li.active{
+    row-gap: 24px;
+}
+
+li.active .faq-response{
+    max-height: 200px;
+}
+
+@media (min-width: 768px) {
+    body{
+        background-image: url(./assets/images/background-pattern-desktop.svg);
+    }
+    main{
+        max-width: 600px;
+        border-radius: 16px;
+        padding: 40px;
+        row-gap: 32px;
+    }
+    h1 img{
+        width: 40px;
+        height: 40px;
+    }
+    h1{
+        font-size: 56px;
+    }
+    ul{
+        row-gap: 24px;
+    }
+    
+    li .faq-subtitle:hover{
+        color: #AD28EB;
+        cursor: pointer;
+    }
+
+    li .faq-subtitle span{
+        font-size: 18px;
+        max-width: 100%;
+    }
+
+    li .faq-subtitle .icon{
+        width: 30px;
+        height: 30px;
+    }
+
+    li .faq-response{
+        font-size: 16px;
+    }
+}
