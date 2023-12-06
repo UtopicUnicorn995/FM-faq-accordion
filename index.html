@@ -67,14 +67,15 @@
   
 <script>
 document.addEventListener('DOMContentLoaded', function () {
-  const accordions = document.querySelectorAll('.accordion');
+  const accordions = document.querySelectorAll('.faq-subtitle');
 
   accordions.forEach((accordion) => {
     accordion.addEventListener('click', () => {
-      accordion.classList.toggle('active');
+      const accordion_parent = accordion.parentElement
+      accordion_parent.classList.toggle('active');
 
-      const faqResponse = accordion.querySelector('.faq-response');
-      faqResponse.style.height = accordion.classList.contains('active') ? `${faqResponse.scrollHeight}px` : '0';
+      const faqResponse = accordion_parent.querySelector('.faq-response');
+      faqResponse.style.height = accordion_parent.classList.contains('active') ? `${faqResponse.scrollHeight}px` : '0';
     });
   });
 });
